@@ -1,0 +1,38 @@
+.blogNavTitle {
+	margin: 10px 20px 40px 20px;
+	border-bottom: 1px solid black;
+}
+
+.postListItem {
+	width: 90%;
+	display: flex;
+	align-items: center;
+	/* background-color: red; */
+	text-decoration: none;
+	margin: 30px 20px 30px 20px;
+	padding: 30px;
+	border-bottom: 1px solid gray;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	transition: box-shadow 0.1s;
+}
+
+.postListItem:hover {
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.postListMetadata {
+	font-weight: bold;
+	color: gray;
+	width: 300px;
+	margin: 0 75px;
+}
+
+.postListTextContainer {
+	color: dimgray;
+	padding-right: 50px;
+}
+
+.postListTitle {
+	color: black;
+}
