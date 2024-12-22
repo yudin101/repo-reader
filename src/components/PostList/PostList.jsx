@@ -1,21 +1,23 @@
 import { Link } from 'react-router-dom'
+import Header from './../Header.jsx'
 import styles from './PostList.module.css'
+
+export function changeDateFormat(date) {
+	const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+	
+	const currentYear = date.slice(0, 4)
+	const currentMonth = months[date.slice(5, 7) - 1];
+	const currentDate = date.slice(8)
+
+	return `${currentDate} ${currentMonth}, ${currentYear}`
+}
+
 
 export default function PostList({ data }) {
 
-	function changeDateFormat(date) {
-		const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
-		
-		const currentYear = date.slice(0, 4)
-		const currentMonth = months[date.slice(5, 7) - 1];
-		const currentDate = date.slice(8)
-
-		return `${currentDate} ${currentMonth}, ${currentYear}`
-	}
-
 	return (
 		<>
-			<h1 className={styles.blogNavTitle}>The Simple Blog</h1>
+			<Header />
 			{data.map(item => (
 				<Link key={item.id} className={styles.postListItem} to={`/${item.id}`}>
 					<div className={styles.postListMetadata}>

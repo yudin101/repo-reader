@@ -1,0 +1,26 @@
+.postBody {
+	margin: -20px 0 0 20px;
+}
+
+.goBackButton {
+	display: inline-block;
+	text-decoration: none;
+	color: #323232;
+	font-size: 15px;
+	font-weight: 500;
+	padding: 3px 5px;
+	margin-bottom: 10px;
+	border: 1px solid #323232;
+	border-radius: 3px;
+	transition: 0.1s;
+}
+
+.goBackButton:hover {
+	background-color: #323232;
+	color: white;
+}
+
+.postMetadata {
+	color: gray;
+	margin-bottom: 10px;
+}
