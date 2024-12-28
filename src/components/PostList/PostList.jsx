@@ -1,32 +1,38 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import Header from './../Header.jsx'
 import styles from './PostList.module.css'
 
-export function changeDateFormat(date) {
-	const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
-	
-	const currentYear = date.slice(0, 4)
-	const currentMonth = months[date.slice(5, 7) - 1];
-	const currentDate = date.slice(8)
 
-	return `${currentDate} ${currentMonth}, ${currentYear}`
-}
+export default function PostList({ data, owner, repo }) {
+	const [rawData, setRawData] = useState([])
 
+	async function fetchRawData(owner, repo, fileName) {
+		const response = await fetch(`https://raw.githubusercontent.com/${owner}/${repo}/refs/heads/main/${fileName}`)
+		return await response.text()
+	}
 
-export default function PostList({ data }) {
+	useEffect(() => {
+  	async function fetchAllData() {
+    	const content = await Promise.all(
+        data.map((item) => fetchRawData(owner, repo, item.name))
+      );
+      setRawData(content);
+    }
+
+		if (data.length > 0) {
+    	fetchAllData();
+		}
+  }, [data, owner, repo]);
 
 	return (
 		<>
-			<Header />
-			{data.map(item => (
-				<Link key={item.id} className={styles.postListItem} to={`/${item.id}`}>
-					<div className={styles.postListMetadata}>
-						<p>{changeDateFormat(item.date)}</p>
-						<p>{item.author}</p>
-					</div>
+			{data.map((item, index) => (
+				<Link key={index} className={styles.postListItem} to={`/${item.path}`}>
 					<div className={styles.postListTextContainer}>
-						<h2 className={styles.postListTitle}>{`${item.id}. ${item.title}`}</h2>
-						<p className={styles.postListContent}>{`${item.content.slice(0, 350)}...`}</p>
+						<h2 className={styles.postListTitle}>{item.name.slice(0, -4)}</h2>
+						<p className={styles.postListContent}>
+							{rawData[index] !== undefined ? `${rawData[index].slice(0, 350)}...` : "Loading..."}
+						</p>
 					</div>
 				</Link>
 			))}
