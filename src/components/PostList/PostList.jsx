@@ -29,7 +29,7 @@ export default function PostList({ data, owner, repo }) {
 			{data.map((item, index) => (
 				<Link key={index} className={styles.postListItem} to={`/${item.path}`}>
 					<div className={styles.postListTextContainer}>
-						<h2 className={styles.postListTitle}>{item.name.slice(0, -4)}</h2>
+						<h2 className={styles.postListTitle}>{item.name}</h2>
 						<p className={styles.postListContent}>
 							{rawData[index] !== undefined ? `${rawData[index].slice(0, 350)}...` : "Loading..."}
 						</p>

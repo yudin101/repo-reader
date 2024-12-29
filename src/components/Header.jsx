@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Header() {
 	const blogNavTitle = {
-		"margin": "10px 20px 40px 20px",
+		"margin": "10px 20px 20px 20px",
 		"borderBottom": "1px solid black",
 		"color": "#000"
 	}
