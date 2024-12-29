@@ -9,7 +9,7 @@ export default function Header() {
 
 	return (
 		<Link to="/" style={{ "textDecoration": "none" }}>
-			<h1 style={blogNavTitle}>The Simple Blog</h1>
+			<h1 style={blogNavTitle}>Repo Reader</h1>
 		</Link>
 	)
 }
