@@ -41,7 +41,7 @@ export default function Post({ data, owner, repo }) {
   return (
     <>
       <div className={styles.postBody}>
-        <Link className={styles.goBackButton} to="/">Back</Link>
+        <Link className={styles.goBackButton} to="/repo-reader/">Back</Link>
         <h2>{item.name}</h2>
         <h5 className={styles.postMetadata}>{owner}</h5>
 

@@ -58,8 +58,8 @@ export default function App() {
           />
         </form>
         <Routes>
-          <Route path="/" element={<PostList data={apiData} owner={owner} repo={repo} />} />
-          <Route path="/:path" element={<Post data={apiData} owner={owner} repo={repo} />} />
+          <Route path="/repo-reader/" element={<PostList data={apiData} owner={owner} repo={repo} />} />
+          <Route path="/repo-reader/:path" element={<Post data={apiData} owner={owner} repo={repo} />} />
         </Routes>
       </Router>	
     </>

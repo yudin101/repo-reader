@@ -8,7 +8,7 @@ export default function Header() {
   }
 
   return (
-    <Link to="/" style={{ "textDecoration": "none" }}>
+    <Link to="/repo-reader" style={{ "textDecoration": "none" }}>
       <h1 style={blogNavTitle}>Repo Reader</h1>
     </Link>
   )

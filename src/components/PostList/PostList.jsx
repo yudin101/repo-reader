@@ -27,7 +27,7 @@ export default function PostList({ data, owner, repo }) {
   return (
     <>
       {data.map((item, index) => (
-        <Link key={index} className={styles.postListItem} to={`/${item.path}`}>
+        <Link key={index} className={styles.postListItem} to={`/repo-reader/${item.path}`}>
           <div className={styles.postListTextContainer}>
             <h2 className={styles.postListTitle}>{item.name}</h2>
             <p className={styles.postListContent}>
