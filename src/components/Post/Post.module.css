@@ -24,3 +24,13 @@
 	color: gray;
 	margin-bottom: 20px;
 }
+
+@media (max-width: 600px) {
+	.postBody {
+		margin: 20px 40px;
+	}
+
+	.goBackButton {
+		display: none;
+	}
+}

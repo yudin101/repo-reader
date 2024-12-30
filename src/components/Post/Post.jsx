@@ -35,7 +35,11 @@ export default function Post({ data, owner, repo }) {
 
 
   if (!item || !rawContent) {
-    return <p>Loading...</p>
+    return (
+			<div className={styles.postBody}>
+				<p>Loading...</p>
+			</div>
+		)
   }	
 
   return (
