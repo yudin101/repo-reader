@@ -35,9 +35,7 @@ export default function App() {
     main(repoUrl) 
   }, [])
 
-  if (!apiData) {
-    return <p>Loading...</p>
-  }
+  if (!apiData) { return null }
 
   return (
     <>
