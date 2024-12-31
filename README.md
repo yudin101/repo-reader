@@ -4,7 +4,7 @@ Read blogs, from a repo!
 
 ## Usage
 
-By default, [sample-blog-data](https://github.com/yudin101/sample-blog-data) is loaded. To load a different repository, you can enter the simply enter it's URL. The repository should have files in text format or markdown format. 
+By default, [sample-blog-data](https://github.com/yudin101/sample-blog-data) is loaded. To load a different repository, you can simply enter it's URL. The repository is recommended to have files in text or markdown format but other formats work as well.
 
 ## Run Locally
 
