@@ -5,7 +5,7 @@ import PostList from './components/PostList/PostList.jsx'
 import Header from './components/Header.jsx'
 
 export default function App() {
-  const [repoUrl, setRepoUrl] = useState("https://github.com/yudin101/sample-blog-data")	
+  const [repoUrl, setRepoUrl] = useState("https://github.com/yudin101/sample-blog-data")  
   const [apiData, setApiData] = useState(null)
   const [owner, setOwner] = useState(null)
   const [repo, setRepo] = useState(null)
@@ -13,21 +13,21 @@ export default function App() {
 
   function extractRepoDetails(repoUrl) {
     const match = repoUrl.match(/github\.com\/([^/]+)\/([^/]+)/)
-    return match ? [match[1], match[2]] : []			
+    return match ? [match[1], match[2]] : []      
   }
 
   async function main(repoUrl) {
     const [repoOwner, repoName] = extractRepoDetails(repoUrl)
     setOwner(repoOwner)
     setRepo(repoName)
-		
+    
     const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents`)
     const data = await response.json()
     setApiData(data)
   }
 
   function handleSubmit(e) {
-    e.preventDefault()		
+    e.preventDefault()    
     main(repoUrl)
   }
 
@@ -59,7 +59,7 @@ export default function App() {
           <Route path="/repo-reader/" element={<PostList data={apiData} owner={owner} repo={repo} />} />
           <Route path="/repo-reader/:path" element={<Post data={apiData} owner={owner} repo={repo} />} />
         </Routes>
-      </Router>	
+      </Router> 
     </>
   )
 }

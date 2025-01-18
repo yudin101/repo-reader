@@ -1,36 +1,36 @@
 .postBody {
-	margin: -20px 50px 30px 50px;
+  margin: -20px 50px 30px 50px;
 }
 
 .goBackButton {
-	display: inline-block;
-	text-decoration: none;
-	color: #323232;
-	font-size: 15px;
-	font-weight: 500;
-	padding: 3px 5px;
-	margin-bottom: 10px;
-	border: 1px solid #323232;
-	border-radius: 3px;
-	transition: 0.1s;
+  display: inline-block;
+  text-decoration: none;
+  color: #323232;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 3px 5px;
+  margin-bottom: 10px;
+  border: 1px solid #323232;
+  border-radius: 3px;
+  transition: 0.1s;
 }
 
 .goBackButton:hover {
-	background-color: #323232;
-	color: white;
+  background-color: #323232;
+  color: white;
 }
 
 .postMetadata {
-	color: gray;
-	margin-bottom: 20px;
+  color: gray;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 600px) {
-	.postBody {
-		margin: 20px 40px;
-	}
+  .postBody {
+    margin: 20px 40px;
+  }
 
-	.goBackButton {
-		display: none;
-	}
+  .goBackButton {
+    display: none;
+  }
 }
